@@ -1,8 +1,9 @@
 main: com.maverickmartyn.advanceyourlife.App
 name: AdvanceYourLife
 description: Adds lives earned from advancements, and enables spectator mode when you run out.
-website: www.codeslasher.com
+website: https://www.spigotmc.org/resources/advance-your-life.97793/
 version: 1.0
+author: MaverickMartyn
 api-version: 1.17
 permissions:
   advanceyourlife.ressurrect:
@@ -11,10 +12,10 @@ permissions:
     description: Allows you to use the command /getlives
 commands:
    ressurrect:
-      description: Ressurrects a player
-      usage: /ressurrect
+      description: Ressurrects a player. Optional playername.
+      usage: /ressurrect <playername?>
       permission: advanceyourlife.ressurrect
    getlives:
-      description: Returns the lives of a player
-      usage: /getlives
+      description: Returns the lives of a player. Optional playername.
+      usage: /getlives <playername?>
       permission: advanceyourlife.getlives

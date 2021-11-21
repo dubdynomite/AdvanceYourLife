@@ -1,0 +1,20 @@
+main: com.maverickmartyn.advanceyourlife.App
+name: AdvanceYourLife
+description: Adds lives earned from advancements, and enables spectator mode when you run out.
+website: www.codeslasher.com
+version: 1.0
+api-version: 1.17
+permissions:
+  advanceyourlife.ressurrect:
+    description: Allows you to use the command /ressurrect
+  advanceyourlife.getlives:
+    description: Allows you to use the command /getlives
+commands:
+   ressurrect:
+      description: Ressurrects a player
+      usage: /ressurrect
+      permission: advanceyourlife.ressurrect
+   getlives:
+      description: Returns the lives of a player
+      usage: /getlives
+      permission: advanceyourlife.getlives

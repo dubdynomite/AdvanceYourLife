@@ -4,12 +4,16 @@ description: Adds lives earned from advancements, and enables spectator mode whe
 website: https://www.spigotmc.org/resources/advance-your-life.97793/
 version: 1.0
 author: MaverickMartyn
-api-version: 1.17
+api-version: 1.19
 permissions:
   advanceyourlife.ressurrect:
     description: Allows you to use the command /ressurrect
   advanceyourlife.getlives:
     description: Allows you to use the command /getlives
+  advanceyourlife.awardlife:
+    description: Allows you to use the command /awardlife
+  advanceyourlife.givelife:
+    description: Allows you to use the command /givelife    
 commands:
    ressurrect:
       description: Ressurrects a player. Optional playername.
@@ -19,3 +23,12 @@ commands:
       description: Returns the lives of a player. Optional playername.
       usage: /getlives <playername?>
       permission: advanceyourlife.getlives
+   awardlife:
+      description: Awards a life to a player. Optional playername.
+      usage: /awardlife <playername?>
+      permission: advanceyourlife.awardlife
+   givelife:
+      description: Gives a life to a player from the sending player.
+      usage: /givelife <playername?>
+      permission: advanceyourlife.givelife
+      

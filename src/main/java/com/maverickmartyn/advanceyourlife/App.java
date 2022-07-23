@@ -37,6 +37,8 @@ public class App extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new MyListener(board), this);
         this.getCommand("ressurrect").setExecutor(new CommandRessurrect(board));
         this.getCommand("getlives").setExecutor(new CommandGetLives(board));
+        this.getCommand("givelife").setExecutor(new CommandGiveLife(board));
+        this.getCommand("awardlife").setExecutor(new CommandAwardLife(board));
         getLogger().info("AdvanceYourLife loaded. Hello!");
     }
 

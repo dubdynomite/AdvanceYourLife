@@ -32,13 +32,16 @@ public class MyListener implements Listener {
 
         lives.setScore(lives.getScore() - 1);
 
-        if (lives.getScore() <= 0) {
+        if (lives.getScore() < 0) {
             //spectator mode
             event.setDeathMessage(event.getDeathMessage() + "\n" + event.getEntity().getPlayer() + " ran out of lives.");
             player.setGameMode(GameMode.SPECTATOR);
+            lives.setScore(0);
         }
         else {
             event.setDeathMessage(event.getDeathMessage() + " and lost a life.");
+            // event.getDrops().clear();
+            // event.setKeepInventory(true);
             //allow respawn.
         }
     }
@@ -64,8 +67,15 @@ public class MyListener implements Listener {
         Objective obj = board.getObjective(SHOWLIVES);
         Score lives = obj.getScore(player.getDisplayName());
         if (!lives.isScoreSet()) {
-            lives.setScore(1);
-            player.sendMessage("Welcome " + player.getName() + "! You have been given 1 life to start with. Be careful!");
+            lives.setScore(3);
+            player.sendMessage("Welcome " + player.getName() + "! You have been given 3 lives to start with. Be careful!");
+        }
+        else if (lives.getScore() <= 0) {
+            player.setGameMode(GameMode.SPECTATOR);
+            player.sendMessage("Welcome " + player.getName() + "! You have no lives remaining. You must petition for resurrection!");
+        }
+        else if (lives.getScore() > 0) {
+            player.setGameMode(GameMode.SURVIVAL);
         }
         else {
             player.sendMessage("You have " + lives.getScore() + " lives.");
